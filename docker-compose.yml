@@ -8,3 +8,8 @@ services:
       context: ./
       dockerfile: Dockerfile
     working_dir: /usr/src/app
+    restart: unless-stopped
+    container_name: storybook
+    volumes:
+      - '.:/usr/src/app'
+      - /usr/src/app/node_modules
